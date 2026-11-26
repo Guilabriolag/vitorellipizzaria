@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pizzaria Vitorelli - Cardápio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cardapio.css">
+</head>
+<body>
+  <div class="fundo"></div>
+
+  <header class="topo">
+    <img class="logo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIVywerTEx7Qorio908b4OTVv3x2yo2lPl38CVdhCxtJOK23tK_pRTy8-hcSIWtNLZ6ifuzf8WhXOmFqBkr2aOqR78JmGc_Wc5uRLHtLUAYenxGd26uMjEg5E0bMKp03cqXDwXuJ7yA_0LXYoUxIn6ye7Vn6Q5CnTv-oPnLAMz58zVaijoADv3cRQM5T3L/s1600/20250614_012036.png" alt="Pizzaria Vitorelli">
+    <div>
+      <h1>Vitorelli</h1>
+      <p>Monte seu pedido e envie pelo WhatsApp</p>
+    </div>
+  </header>
+
+  <div class="controles">
+    <nav class="tabs" aria-label="Categorias">
+      <button class="tab active" data-cat="pizza">Pizzas</button>
+      <button class="tab" data-cat="broto">Brotos</button>
+      <button class="tab" data-cat="calzone">Calzones</button>
+      <button class="tab" data-cat="bebidas">Bebidas</button>
+    </nav>
+    <div class="linha-ctrl">
+      <div class="modo" id="modo">
+        <button class="active" data-modo="inteira">Inteira</button>
+        <button data-modo="meia">Meia-meia</button>
+      </div>
+      <input id="busca" type="search" placeholder="Buscar sabor ou ingrediente" aria-label="Buscar">
+    </div>
+    <div class="aviso-meia" id="aviso-meia" hidden>
+      <span id="aviso-texto"></span>
+      <button id="cancelar-meia">Cancelar</button>
+    </div>
+  </div>
+
+  <main id="sabores" class="lista"></main>
+
+  <section class="faixa">
+    <p>Ingredientes de primeira</p>
+    <div class="faixa-janela">
+      <div class="faixa-pista">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgjXm_49v2kv9GDu0Qh9LbdIy5IKpscrD1upAKjjlI8rfcwTOEnbh5OIdv6FaAsYivw-3fmezw3CTE0HmzxMJWPXfEXaMsMhRqsoI_zMWOPy9RSnIli3rvQcuIVqqI_v4L6PH8CCl2H-Udnje7SewB8Wo3KMAR4puwIjJT2eZey6CczVn1cYpAFG8Gwarx6/s560/20251222_094017.jpg" alt="">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2wdXHPA7jMVKb_MnxxmOQu7BbVMPj7aNm8Z2rpF5gGJyrd3YR7NkDCBmuRIdqi1ImcUJe1_0f2tN9rWlGKTnJQMF8masXwLjEurW-xgRI0s-ouu0taKsbFWlZZkMZKouXiNw3ntFzqT3Jeyw7bBdbowXMsFSnfo3f3BiOJnmWYfdf4OaMb6NFpSGlFQQf/s400/images%20(9).jpeg" alt="">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBqgr7__voydKd8RrJmdvBnOwFsoIz1GLwlj0H_uYNYxknpJIEKEJvgaR0dgTSdBGuLCnIV83Q_yWPPVYush41CeUfuVTMBjN9YkSFHWks1stViNDKPI3bW51gFJn9gsVZ2k_5OVsGrsSFEz9Esnl_1kEotSAx4wU0-i_AEuYl26w6mjQoYBrtApjIJDMJ/s735/images%20(41).jpeg" alt="">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtI0dLj6zjKU7BkLTF5lz1UWlStQoVJVzPeBcTvPqX-CxxpohKttLvU9PB5usiqFCIIPmOclIHF246rhXDSRjQEof3SAfPNf2pk0HxIETPsthieLUO2jUz0rN2oxPgwunl7iHb1vSoZacjF1tvniP6HL3bc-uEtsjQUx6nIP5coBtFcuGF-Gw4zYSdKqaO/s600/coca-cola-logo-png_seeklogo-32891.png" alt="">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiEscmMSTWuW11qtlLcZ76mO0IWEqPEF_upeM5isQ37_VEvmrwvJGPnAkE61nkZTEGbsaLgc2lKV91mbSXQ6TOC-71H0Z2xcBkAl7aaP7E_zBVY9PwdIe8i5dobmIgNvq3HThFt2eHHY6wjEjkpi1ld0dw5ckaB9gRVARlRW4TW_i9LN36JYiwg9jGVJKrg/s348/png-clipart-requeijao-catupiry-cream-cheese-food-cheese-food-text-thumbnail.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- Barra do pedido (aparece quando há itens) -->
+  <button id="barra" class="barra" hidden>
+    <span class="barra-esq"><span id="cart-count" class="badge">0</span><span id="barra-itens">0 itens</span></span>
+    <span class="barra-dir">Ver pedido · <b id="barra-total">R$ 0,00</b></span>
+  </button>
+
+  <div id="veu" class="veu"></div>
+
+  <section id="carrinho" class="folha" aria-label="Resumo do pedido">
+    <div class="folha-topo">
+      <h2>Seu pedido</h2>
+      <button id="btn-limpar" class="link">Limpar</button>
+      <button id="btn-fechar" class="fechar" aria-label="Fechar">✕</button>
+    </div>
+
+    <ul id="lista-pedido" class="pedido"></ul>
+
+    <div class="totais">
+      <div><span>Subtotal</span><span id="resumo-sub">R$ 0,00</span></div>
+      <div id="linha-taxa" hidden><span>Taxa de entrega</span><span id="resumo-taxa">R$ 0,00</span></div>
+      <div class="total"><span>Total</span><span id="resumo-total">R$ 0,00</span></div>
+    </div>
+
+    <div class="entrega">
+      <button id="btn-retirar" class="opcao">Vou retirar</button>
+      <button id="btn-delivery" class="opcao">Delivery</button>
+    </div>
+
+    <div id="entregaCampos" class="campos" hidden>
+      <input type="text" id="endereco" placeholder="Rua e número" autocomplete="street-address">
+      <select id="bairro" aria-label="Bairro"></select>
+    </div>
+
+    <div class="campos">
+      <select id="pagamento" aria-label="Forma de pagamento">
+        <option value="">Forma de pagamento</option>
+        <option value="Cartão">Cartão</option>
+        <option value="Pix">Pix</option>
+        <option value="Dinheiro">Dinheiro</option>
+      </select>
+      <div id="trocoArea" hidden>
+        <input type="number" id="valorTroco" inputmode="decimal" placeholder="Troco para quanto?">
+      </div>
+    </div>
+
+    <button id="enviar" class="enviar">Enviar pedido no WhatsApp</button>
+  </section>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="dados.js"></script>
+  <script src="carrinho.js"></script>
+  <script src="cardapio.js"></script>
+</body>
+</html>
